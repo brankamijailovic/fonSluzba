@@ -1,6 +1,6 @@
 <?php
-  include 'glavnaSesija.php';
-  include 'konekcija.php';
+  include './server/glavnaSesija.php';
+  include './server/konekcija.php';
   $rezultat = "";
   $rezultatIzmena = "";
   if(isset($_POST['sacuvaj'])){
@@ -145,8 +145,6 @@
             </form>
             <h1>Vizuelni podaci</h1>
             <div id="piechart" style="width: 900px; height: 500px;"></div>
-            <h1>Google mapa Fona</h1>
-            <div id="mapa" style="height: 600px;"></div>
 
 
         </div>
@@ -157,7 +155,7 @@
 
     <?php include 'footer.php'; ?>
 
-<script src="assets/plugins/jquery.min.js" type="text/javascript"></script>
+  <script src="assets/plugins/jquery.min.js" type="text/javascript"></script>
 <script src="assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
 <script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="assets/plugins/fancybox/source/jquery.fancybox.pack.js" type="text/javascript"></script><!-- pop up -->
@@ -185,6 +183,7 @@
         $('#prijave').DataTable();
     });
   </script>
+  
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
@@ -193,7 +192,7 @@
       function drawChart() {
         var podaci;
         $.ajax({
-          url: "vratiPodatkeGrafik.php",
+          url: "./server/vratiPodatkeGrafik.php",
           success: function(json){
             podaci = JSON.parse(json);
             var data = google.visualization.arrayToDataTable(podaci);

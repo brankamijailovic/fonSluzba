@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-sm-4">
-                <div class="copyright">2018 © Studentska sluzba FONa. Sva prava zadrzana.</div>
+                <div class="copyright">2020 © Studentska sluzba FONa. Sva prava zadrzana.</div>
             </div>
             <div class="col-md-4 col-sm-4">
                 <ul class="social-icons">
@@ -15,9 +15,6 @@
                     <li><a class="vimeo" data-original-title="vimeo" href="#"></a></li>
                     <li><a class="skype" data-original-title="skype" href="#"></a></li>
                 </ul>
-            </div>
-            <div class="col-md-4 col-sm-4 text-right">
-                <p class="powered">Designed by: <a href="#">SMV</a></p>
             </div>
         </div>
     </div>

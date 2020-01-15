@@ -6,8 +6,8 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 if(Sluzbenik::ulogujMe($konekcija,$username,$password)){
-  header("Location:index.php");
+  header("Location:../index.php");
 }else{
-  header("Location:login.php");
+  header("Location:../login.php");
 }
  ?>
