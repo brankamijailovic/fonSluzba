@@ -1,6 +1,6 @@
 <?php
-  include 'glavnaSesija.php';
-  include 'konekcija.php';
+  include './server/glavnaSesija.php';
+  include './server/konekcija.php';
  ?>
 
 <!DOCTYPE html>
@@ -76,7 +76,7 @@
 <script>
     function pretraziPoRoku(id){
       $.ajax({
-        url: "pretraziPoRoku.php",
+        url: "./server/pretraziPoRoku.php",
         data: {id:id},
         success: function(tabela){
           $("#rezultat").html(tabela);

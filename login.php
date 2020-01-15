@@ -37,7 +37,7 @@
           <div class="col-md-6">
             <h2><strong>Login</strong> forma</h2>
             <h4>Ulogujte se da biste nastavili da koristite aplikaciju</h4>
-            <form method="POST" action="uloguj.php">
+            <form method="POST" action="./server/uloguj.php">
 
               <label for="username">Username</label>
               <input type="text" placeholder="Unesite username" id="username" name="username" class="form-control">

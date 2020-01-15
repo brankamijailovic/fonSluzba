@@ -1,6 +1,6 @@
 <?php
-  include 'glavnaSesija.php';
-  include 'konekcija.php';
+  include './server/glavnaSesija.php';
+  include './server/konekcija.php';
   $rezultat = "";
 
   if(isset($_POST['sacuvaj'])){

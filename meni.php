@@ -17,7 +17,7 @@
                       <?php
                     } ?>
                     <li><a href="randomSlikaSmirenje.php">Smiri se</a></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="./server/logout.php">Logout</a></li>
                 </ul>
             </div>
         </div>
