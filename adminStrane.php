@@ -129,7 +129,7 @@
                         <td><?php echo $row['ocena'] ?></td>
                         <td><?php echo $row['datumPrijave'] ?></td>
                         <td><?php echo $row['imePrezime'] ?></td>
-                        <td><a href="obrisiPrijavu.php?brojIndeksa=<?php echo $row['brojIndeksa'] ?>&predmetID=<?php echo $row['predmetID'] ?>&rokID=<?php echo $row['rokID'] ?>" class="btn btn-danger"><i class="fa fa-times"></i> Obrisi</a></td>
+                        <td><a href="./server/obrisiPrijavu.php?brojIndeksa=<?php echo $row['brojIndeksa'] ?>&predmetID=<?php echo $row['predmetID'] ?>&rokID=<?php echo $row['rokID'] ?>" class="btn btn-danger"><i class="fa fa-times"></i> Obrisi</a></td>
                       </tr>
 
                       <?php
@@ -138,7 +138,7 @@
               </tbody>
             </table>
             <h1>Ubaci raspored</h1>
-            <form action="upload.php" method="post" enctype="multipart/form-data">
+            <form action="./server/upload.php" method="post" enctype="multipart/form-data">
                 Ubaci raspored
                 <input type="file" class="form-control" name="fileToUpload" id="fileToUpload">
                 <input type="submit" class="form-control btn-primary margin-top-10" value="Ubaci raspored" name="submit">
