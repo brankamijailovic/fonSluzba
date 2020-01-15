@@ -55,7 +55,7 @@
               <label id="rok">Rok</label>
                 <select name="rok" id="rok" class="form-control" name="rok">
                   <?php
-                  $zahtev = curl_init("http://localhost/fonsluzba/fonVebServis/rokovi");
+                  $zahtev = curl_init("http://localhost/fonSluzba/fonSluzba/fonVebServis/rokovi");
             			curl_setopt($zahtev, CURLOPT_RETURNTRANSFER, true);
             			$json = curl_exec($zahtev);
             			$podaci = json_decode($json);
@@ -75,7 +75,7 @@
                 <label id="student">Student</label>
                   <select name="student" id="student" class="form-control" name="student">
                     <?php
-                    $zahtev = curl_init("http://localhost/fonsluzba/fonVebServis/studenti");
+                    $zahtev = curl_init("http://localhost/fonSluzba/fonSluzba/fonVebServis/studenti");
                     curl_setopt($zahtev, CURLOPT_RETURNTRANSFER, true);
                     $json = curl_exec($zahtev);
                     $podaci = json_decode($json);
@@ -90,7 +90,7 @@
                   <label id="predmet">Predmet</label>
                     <select name="predmet" id="predmet" class="form-control" name="predmet">
                       <?php
-                      $zahtev = curl_init("http://localhost/fonsluzba/fonVebServis/predmeti");
+                      $zahtev = curl_init("http://localhost/fonSluzba/fonSluzba/fonVebServis/predmeti");
                       curl_setopt($zahtev, CURLOPT_RETURNTRANSFER, true);
                       $json = curl_exec($zahtev);
                       $podaci = json_decode($json);

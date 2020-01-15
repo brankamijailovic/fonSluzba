@@ -8,7 +8,7 @@
 
     $niz = array("predmet"=>$predmet);
     $json = json_encode($niz);
-    $zahtev = curl_init("http://localhost/fonsluzba/fonVebServis/unesiPredmet");
+    $zahtev = curl_init("http://localhost/fonSluzba/fonSluzba/fonVebServis/unesiPredmet");
     curl_setopt($zahtev, CURLOPT_POST, true);
     curl_setopt($zahtev, CURLOPT_POSTFIELDS,$json);
     curl_setopt($zahtev, CURLOPT_RETURNTRANSFER, true);
