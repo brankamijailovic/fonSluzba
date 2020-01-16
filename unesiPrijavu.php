@@ -2,13 +2,11 @@
   include './server/glavnaSesija.php';
   include './server/konekcija.php';
   $rezultat = "";
-
   if(isset($_POST['sacuvaj'])){
     $predmet = $_POST['predmet'];
     $student = $_POST['student'];
     $rok = $_POST['rok'];
     $sluzbenik = $_SESSION['sluzbenik']->sluzbenikID;
-
     if($konekcija->query("INSERT INTO prijava(rokID,predmetID,brojIndeksa,sluzbenikID) VALUES ($rok,$predmet,'$student',$sluzbenik)")){
       $rezultat = "Uspesno prijavljen";
     }else{
@@ -57,11 +55,10 @@
                   <?php
                   $zahtev = curl_init("http://localhost/fonSluzba/fonSluzba/fonVebServis/rokovi");
             			curl_setopt($zahtev, CURLOPT_RETURNTRANSFER, true);
-            			$json = curl_exec($zahtev);
+                  $json = curl_exec($zahtev);
+                 // echo "<option>".$json."</option>";
             			$podaci = json_decode($json);
             			curl_close($zahtev);
-
-
                       //$q ="SELECT * FROM rok";
                       //$rez = $konekcija->query($q);
                       //while($row = $rez->fetch_assoc()){
@@ -78,6 +75,7 @@
                     $zahtev = curl_init("http://localhost/fonSluzba/fonSluzba/fonVebServis/studenti");
                     curl_setopt($zahtev, CURLOPT_RETURNTRANSFER, true);
                     $json = curl_exec($zahtev);
+                    
                     $podaci = json_decode($json);
                     curl_close($zahtev);
                         foreach($podaci as $row){

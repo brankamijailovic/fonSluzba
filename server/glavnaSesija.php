@@ -5,7 +5,7 @@
 
   if(!isset($_SESSION['sluzbenik'])){
     if(!isset($_POST['login'])){
-      header("Location:../login.php");
+      header("Location: ./login.php");
     }
 
   }

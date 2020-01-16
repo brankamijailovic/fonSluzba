@@ -1,3 +1,4 @@
+
 <?php
 class Database {
 	private $hostname = "localhost";
@@ -8,25 +9,19 @@ class Database {
 	private $result = true;
 	private $records;
 	private $affectedRows;
-
-
 	function __construct($dbname)
 	{
 		$this->$dbname = $dbname;
 		$this->Connect();
 	}
-
 	public function getResult()
 	{
 		return $this->result;
 	}
-
 	function __destruct()
 	{
 		$this->dblink->close();
 	}
-
-
 	function Connect()
 	{
 		$this->dblink = new mysqli($this->hostname, $this->username, $this->password, $this->dbname);
@@ -37,14 +32,10 @@ class Database {
 		}
 		$this->dblink->set_charset("utf8");
 	}
-
 		function unesiNoviPredmet($pod) {
 			$konekcija = new mysqli("localhost", "root", "", "sluzba");
-
 			$predmet = $konekcija->real_escape_string($pod['predmet']);
-
 			$query = "INSERT into predmet (nazivPredmeta) VALUES ('$predmet')";
-
 			if($konekcija->query($query))
 			{
 				$this ->result = true;
@@ -55,15 +46,12 @@ class Database {
 			}
 			$konekcija->close();
 		}
-
-
 	function vratiStudente() {
 	  $konekcija = new mysqli("localhost", "root", "", "sluzba");
 	  $q = 'SELECT * FROM student ';
 	  $this ->result = $konekcija->query($q);
 	  $konekcija->close();
 	}
-
 	function vratiPredmete() {
 	  $konekcija = new mysqli("localhost", "root", "", "sluzba");
 	  $q = 'SELECT * FROM predmet';
@@ -76,8 +64,37 @@ class Database {
 	  $this ->result = $konekcija->query($q);
 	  $konekcija->close();
 	}
-
-
+	public function obrisiPredmet($pod)
+	{
+		$konekcija = new mysqli("localhost", "root", "", "sluzba");
+			$predmet = $konekcija->real_escape_string($pod['predmetID']);
+			$query = "delete FROM predmet WHERE predmetID=".$predmet;
+			if($konekcija->query($query))
+			{
+				$this ->result = true;
+			}
+			else
+			{
+				$this->result = false;
+			}
+			$konekcija->close();
+	}
+	public function izmeniPredmet($pod)
+	{
+		$konekcija = new mysqli("localhost", "root", "", "sluzba");
+			$predmetID = $konekcija->real_escape_string($pod['predmetID']);
+			$predmetNaziv = $konekcija->real_escape_string($pod['predmetNaziv']);
+			$query = "update predmet set nazivPredmeta='".$predmetNaziv."' WHERE predmetID=".$predmetID;
+			if($konekcija->query($query))
+			{
+				$this ->result = true;
+			}
+			else
+			{
+				$this->result = false;
+			}
+			$konekcija->close();
+	}
 
 	function ExecuteQuery($query)
 	{
